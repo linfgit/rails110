@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   #不加这一条groups 页面就会报错。而welcome 则不需要加。
   root 'groups#index'
   resources :groups do
+    member do
+      post :join
+      post :quit
+    end
+
     resources :posts
   end
 end
